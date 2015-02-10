@@ -9,7 +9,6 @@ var minZoomLevel = 7;	//sets min zoom
 
 var mapOptions = {
   zoom: 7,
-  zoom: minZoomLevel,
   center: myLatlng,
   mapTypeId: google.maps.MapTypeId.TERRAIN
   
@@ -20,11 +19,11 @@ var mapOptions = {
 //restrict boundaries///////////////////////
 	  
  var strictBounds = new google.maps.LatLngBounds(
-     new google.maps.LatLng(49.819464, -3.624982), 
-     new google.maps.LatLng(56.190733, 1.121112)
+     new google.maps.LatLng(50.738281, -3.652526), 
+     new google.maps.LatLng(55.081956, 0.427984)
    );
    
- google.maps.event.addListener(map, 'dragend', function() {
+ google.maps.event.addListener(map, 'drag', function() {
      if (strictBounds.contains(map.getCenter())) return;
 
      // We're out of bounds - Move the map back within the bounds
@@ -57,6 +56,48 @@ var mapOptions = {
 	  stylers: [
 	  {visibility: 'off'}
 	]
+  },
+  {
+	  featureType: 'poi',
+	  stylers: [
+	  {visibility: 'off'}
+	]
+  },
+  {
+	  featureType: 'administrative',
+	  stylers: [
+	  {visibility: 'off'}
+	]
+  },
+  {
+	  featureType: 'transit',
+	  stylers: [
+	  {visibility: 'off'}
+	]
+  },
+  {
+	  featureType: 'landscape.man_made',
+	  stylers: [
+	  {visibility: 'off'}
+	]
+  },
+  {
+	  featureType: 'water',
+          elementType: 'geometry',
+	  stylers: [
+	  
+          {color: "#000000"},
+          {lightness: 5}
+	]
+  },
+  {
+	  featureType: 'landscape',
+          elementType: 'all',
+	  stylers: [
+	  
+          {color: "#08304b"},
+          {lightness: 5}
+	]
   }
   ]
   map.setOptions({
@@ -64,13 +105,22 @@ var mapOptions = {
   });
  ////////////////////////////////////////////////////////////////
  
-var markerImage = 'icon.png'; 
+
 var markerEdgeHill = new google.maps.Marker({
     position: edgeHill,
     map: map,
-	icon: markerImage,
+	icon:'icon.png',
     title:"Hello World!"
 });
+var infowindow = new google.maps.InfoWindow({
+  content:"<h1>IT WORKS</h1>" + "I managed to get the infowindow working"
+  });
+
+google.maps.event.addListener(markerEdgeHill, 'click', function() {
+  infowindow.open(map,markerEdgeHill);
+  map.setZoom(10);
+  map.setCenter(marker.getPosition());
+  });
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
