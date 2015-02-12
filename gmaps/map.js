@@ -10,6 +10,8 @@ var minZoomLevel = 7;	//sets min zoom
 var mapOptions = {
   zoom: 7,
   center: myLatlng,
+   disableDefaultUI:true, 
+   panControl:false,
   mapTypeId: google.maps.MapTypeId.TERRAIN
   
 };
@@ -119,7 +121,8 @@ var infowindow = new google.maps.InfoWindow({
 google.maps.event.addListener(markerEdgeHill, 'click', function() {
   infowindow.open(map,markerEdgeHill);
   map.setZoom(10);
-  map.setCenter(marker.getPosition());
+  map.setCenter(markerEdgeHill.getPosition());
+  
   });
 }
 
