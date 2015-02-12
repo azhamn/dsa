@@ -34,7 +34,7 @@
     position:absolute;
     top:125px;
     width:300px;
-    height:500px;
+    height:800px;
     background-color:chartreuse;
 }
 
@@ -43,14 +43,14 @@
     top:125px;
     left:300px;
     width:1036px;
-    height:500px;
+    height:800px;
     background-color:red;
 
 }
 .footer{
     position:absolute;
     width:1336px;
-    top:625px;
+    top:925px;
     background-color:#3c3c3c;
     text-align:center;
     color:white;
