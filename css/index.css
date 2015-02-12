@@ -1,10 +1,16 @@
+body
+{
+    
+    
+}
 .wrapper{
     width:100%;
     width:1336px;    
+  
     background-color:#A7C5C7;
     margin-left:auto;
     margin-right:auto;
-
+    
     position:relative;
 }
 
@@ -13,7 +19,7 @@
     position:absolute;
     top:0px;
     height:100px;
-    background-color:green;
+    background-color:rgba(240, 240, 240, 0.4);
     width:100%;
     z-index:50;
 }
@@ -26,8 +32,8 @@
     width: 100%;
     height:25px;
 
-    background:blue;
-    box-shadow: 0 0 25px rgba(0,0,0,0.9); 
+    background:rgba(240, 240, 240, 0.8);
+    
 }
 
 .battleList{
@@ -35,7 +41,8 @@
     top:125px;
     width:300px;
     height:800px;
-    background-color:chartreuse;
+    background-color:rgba(240, 240, 240, 0.4);
+    
 }
 
 .api{
@@ -55,5 +62,5 @@
     text-align:center;
     color:white;
     padding-top:10px;
-    box-shadow: 0 0 25px rgba(0,0,0,4);
+    
 }

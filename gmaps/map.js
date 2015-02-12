@@ -1,7 +1,7 @@
 var map;
 function initialize() {
 	
-var myLatlng = new google.maps.LatLng(52.949090, -1.286459);
+var myLatlng = new google.maps.LatLng(52.601316, -1.195585);
 var edgeHill = new google.maps.LatLng(52.1135180,-1.4531970);
 
 

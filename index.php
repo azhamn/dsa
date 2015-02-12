@@ -142,13 +142,16 @@
             </script>
     </head>
     
-    <body>
+    <body style=" background-image: url('images/background.jpg'); background-size: 100%, 100%; ">
         <!-- wrapper class  -->
         <div class="wrapper" >
            
             <div class="header">THIS IS THE HEADER</div>
             <div class="nav_bar">THIS IS THE NAV BAR</div>     
-            <div class="battleList">THIS IS THE LIST OF BATTLES</div>
+            <div class="battleList">
+                test
+                
+            </div>
           
             <div id ="map-canvas" class="api">     </div>
             <div class="footer">This is the footer</div>
