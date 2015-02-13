@@ -158,7 +158,7 @@
           
 <!--            <div class="header">THIS IS THE HEADER</div>-->
 <!--            <div class="nav_bar">THIS IS THE NAV BAR</div>     -->
-             <div class="book" style="background-image:url('book.png');">
+             <div class="book" style="background-image:url('book1.png');">
                 
             </div> 
           

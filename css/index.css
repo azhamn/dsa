@@ -50,17 +50,17 @@ body
     //top:150px;
    // left:675px;
     width:578px;
-    height:860px;
+    height:785px;
     border-radius: 20px;
-    opacity:.65;
+    opacity:.55;
 }
 
 .api_container{
      position:absolute;
-    top:122px;
-    left:677px;
-    width:578;
-    height:860;
+    top:75px;
+    left:665px;
+    width:578px;
+    height:785px;
    box-shadow:  inset 39px 1px 53px -8px #575757;
   border-radius: 25px;
 }
@@ -70,8 +70,8 @@ body
 
 .book{
    position:absolute;
-    top:80px;
-    
+    top:50px;
+   background-repeat:no-repeat;
     width:1336px;
     height:927px;
    
