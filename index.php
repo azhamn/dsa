@@ -2,6 +2,8 @@
     <head>
         <title>English Civil War</title>
         <link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false"></script>
     <script type="text/javascript">
                 var map;
