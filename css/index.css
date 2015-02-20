@@ -1,16 +1,19 @@
 body
 {
-    
-     
+
+
 }
+
+
+
 .wrapper{
     width:100%;
     width:1336px;    
-  
+
     background-color:#A7C5C7;
     margin-left:auto;
     margin-right:auto;
-    
+
     position:relative;
 }
 
@@ -19,7 +22,7 @@ body
     position:absolute;
     top:0px;
     height:100px;
-    
+
     width:100%;
     z-index:50;
 }
@@ -33,22 +36,40 @@ body
     height:25px;
 
     background:rgba(240, 240, 240, 0.8);
-    
+
+}
+@font-face {
+    font-family: 'drawing_with_markersregular';
+    src: url('Drawing with markers-webfont.eot');
+    src: url('Drawing with markers-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Drawing with markers-webfont.woff2') format('woff2'),
+         url('Drawing with markers-webfont.woff') format('woff'),
+         url('Drawing with markers-webfont.ttf') format('truetype'),
+         url('Drawing with markers-webfont.svg#drawing_with_markersregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-.battleList{
+h4:first-of-type:first-letter { float: left; color: #903; font-size: 75px; line-height: 60px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: Georgia; }
+
+.leftPage{
     position:absolute;
-    top:125px;
-    width:300px;
-    height:800px;
-  
-    
+    top:85px;
+    left:75px;
+    width:578px;
+    height:780px;
+font-family: Georgia;
+color: #523928;
+//opacity: .825;
+
+
 }
 
 .api{
     position:absolute;
     //top:150px;
-   // left:675px;
+    // left:675px;
     width:578px;
     height:785px;
     border-radius: 5px;
@@ -56,25 +77,25 @@ body
 }
 
 .api_container{
-     position:absolute;
+    position:absolute;
     top:85px;
     left:665px;
     width:578px;
     height:780px;
-   //box-shadow:  inset 39px 1px 53px -8px #575757;
-  border-radius: 5px;
+    //box-shadow:  inset 39px 1px 53px -8px #575757;
+    border-radius: 5px;
 }
 
 
 
 
 .book{
-   position:absolute;
+    position:absolute;
     top:50px;
-   background-repeat:no-repeat;
+    background-repeat:no-repeat;
     width:1336px;
     height:927px;
-   
+
 }
 .footer{
     position:absolute;
@@ -84,5 +105,5 @@ body
     text-align:center;
     color:white;
     padding-top:10px;
-    
+
 }
