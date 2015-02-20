@@ -29,13 +29,47 @@ $conn->close();
 
 ?>
 
+<?php
+
+require'dbinfo.php';
+
+$sql = "SELECT battle_name, name FROM battle, leaders, battleLeaders WHERE battle_id = battle_battle_id AND name_id = leaders_name_id";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+   
+//test
+//$lngArray = array();
+//$index = 0;
+
+		while($row = $result->fetch_assoc()) {
+        echo  "Name: " . $row["name"].  "battle: " . $row["battle_name"]. "<br>";
+    }
+
+
+/* while($row = mysqli_fetch_array($result)){
+	$Array[$index] = $row;
+	//$index ++;
+}
+ */
+} 
+else {
+    echo "0 results";
+}
+$conn->close();
+
+?>
+
+
+
+
+
 
    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false"></script>
     <script type="text/javascript">
                 var map;
                 function initialize() {
                     var myLatlng = new google.maps.LatLng(52.601316, -1.195585);
-                   // var edgeHill = new google.maps.LatLng(52.1135180, -1.4531970);
 					 
 					 var edgeHill = new google.maps.LatLng(<?php echo json_encode($Array[0]["lat"]); ?> , <?php echo json_encode($Array[0] ["lng"]); ?>);
 					 var marstonMoor = new google.maps.LatLng(<?php echo json_encode($Array[1]["lat"]); ?> , <?php echo json_encode($Array[1] ["lng"]); ?>);
@@ -51,7 +85,30 @@ $conn->close();
 					 var titleNaseby =(<?php echo json_encode($Array[4]["battle_name"]); ?>);
 					 var titleTorrington =(<?php echo json_encode($Array[5]["battle_name"]); ?>);
 					 
-
+					 var descEdgeHill =(<?php echo json_encode($Array[0]["description"]); ?>);
+					 var descMarstonMoor =(<?php echo json_encode($Array[1]["description"]); ?>);
+					 var descNewbury =(<?php echo json_encode($Array[2]["description"]); ?>);
+					 var descNewbury2 =(<?php echo json_encode($Array[3]["description"]); ?>);
+					 var descNaseby =(<?php echo json_encode($Array[4]["description"]); ?>);
+					 var descTorrington =(<?php echo json_encode($Array[5]["description"]); ?>);
+					 
+					 var belEdgeHill =(<?php echo json_encode($Array[0]["Beligerents"]); ?>);
+					 var belMarstonMoor =(<?php echo json_encode($Array[1]["Beligerents"]); ?>);
+					 var belNewbury =(<?php echo json_encode($Array[2]["Beligerents"]); ?>);
+					 var belNewbury2 =(<?php echo json_encode($Array[3]["Beligerents"]); ?>);
+					 var belNaseby =(<?php echo json_encode($Array[4]["Beligerents"]); ?>);
+					 var belTorrington =(<?php echo json_encode($Array[5]["Beligerents"]); ?>);
+					 
+					 var outcomeEdgeHill =(<?php echo json_encode($Array[0]["outcome"]); ?>);
+					 var outcomeMarstonMoor =(<?php echo json_encode($Array[1]["outcome"]); ?>);
+					 var outcomeNewbury =(<?php echo json_encode($Array[2]["outcome"]); ?>);
+					 var outcomeNewbury2 =(<?php echo json_encode($Array[3]["outcome"]); ?>);
+					 var outcomeNaseby =(<?php echo json_encode($Array[4]["outcome"]); ?>);
+					 var outcomeTorrington =(<?php echo json_encode($Array[5]["outcome"]); ?>);
+					 
+					 
+					 
+					 
                    
 				   var minZoomLevel = 7;	//sets min zoom
                     var mapOptions = {
@@ -151,44 +208,49 @@ $conn->close();
                         position: edgeHill,
                         map: map,
                         icon: 'gmaps/icon.png',
-                        title: "Hello World!"
+                      
                     });
 					    var markerMarstonMoor = new google.maps.Marker({
                         position: marstonMoor,
                         map: map,
                         icon: 'gmaps/icon.png',
-                        title: "Hello World!"
+                       
                     });
 					var markerNewbury = new google.maps.Marker({
                         position: Newbury,
                         map: map,
                         icon: 'gmaps/icon.png',
-                        title: "Hello World!"
+                        
                     });
 					var markerNewbury2 = new google.maps.Marker({
                         position: Newbury2,
                         map: map,
                         icon: 'gmaps/icon.png',
-                        title: "Hello World!"
+                       
                     });
 					
 					var markerNaseby = new google.maps.Marker({
                         position: Naseby,
                         map: map,
                         icon: 'gmaps/icon.png',
-                        title: "Hello World!"
+                       
                     });
 					var markerTorrington = new google.maps.Marker({
                         position: Torrington,
                         map: map,
                         icon: 'gmaps/icon.png',
-                        title: "Hello World!"
+                     
                     });
 					
 		//dummy comment			
 	/*********************************************************************************************************************/					
                     var infowindow = new google.maps.InfoWindow({
-                        content: "<h1> "+ titleEdgeHill+" </h1>" + "I managed to get the infowindow working"
+                        content: "<h1> "+ titleEdgeHill+" </h1>" + 
+						"<p> <b>Battle Description: </b>" +descEdgeHill+ " </p>"  +
+						"<p> <b>Belligerents: </b>" +belEdgeHill+ " </p>"  +
+						"<p> <b>Outcome: </b>" +outcomeEdgeHill+ " </p>" ,
+								
+						
                     });
 				
                     google.maps.event.addListener(markerEdgeHill, 'mouseover', function() {
@@ -202,7 +264,10 @@ $conn->close();
                     });
 	/*********************************************************************************************************************/					
                     var infowindowMarstonMoor = new google.maps.InfoWindow({
-                        content: "<h1> "+ titleMarstonMoor+" </h1>" + "I managed to get the infowindow working"
+                        content: "<h1> "+ titleMarstonMoor+" </h1>" + 
+						"<p> <b>Battle Description: </b>" +descMarstonMoor+ " </p>"  +
+						"<p> <b>Belligerents: </b>" +belMarstonMoor+ " </p>"  +
+						"<p> <b>Outcome: </b>" +outcomeMarstonMoor+ " </p>"  
                     });
 				
                     google.maps.event.addListener(markerMarstonMoor, 'mouseover', function() {
@@ -216,7 +281,10 @@ $conn->close();
                     });
 	/*********************************************************************************************************************/				
                     var infowindowNewbury = new google.maps.InfoWindow({
-                        content: "<h1> "+ titleNewbury+" </h1>" + "I managed to get the infowindow working"
+                        content: "<h1> "+ titleNewbury+" </h1>" +
+						"<p> <b>Battle Description: </b>" +descNewbury+ " </p>"  +
+						"<p> <b>Belligerents: </b>" +belNewbury+ " </p>"  +
+						"<p> <b>Outcome: </b>" +outcomeNewbury+ " </p>"  
                     });
 				
                     google.maps.event.addListener(markerNewbury, 'mouseover', function() {
@@ -230,7 +298,10 @@ $conn->close();
                     });
 	/*********************************************************************************************************************/	
 	                    var infowindowNewbury2 = new google.maps.InfoWindow({
-                        content: "<h1> "+ titleNewbury2+" </h1>" + "I managed to get the infowindow working"
+                        content: "<h1> "+ titleNewbury2+" </h1>" + 
+						"<p> <b>Battle Description: </b>" +descNewbury2+ " </p>" +
+							"<p> <b>Belligerents: </b>" +belNewbury2+ " </p>"  +
+						"<p> <b>Outcome: </b>" +outcomeNewbury2+ " </p>" 
                     });
 				
                     google.maps.event.addListener(markerNewbury2, 'mouseover', function() {
@@ -244,7 +315,10 @@ $conn->close();
                     });
 	/*********************************************************************************************************************/	
 	      var infowindowNaseby = new google.maps.InfoWindow({
-                        content: "<h1> "+ titleNaseby+" </h1>" + "I managed to get the infowindow working"
+                        content: "<h1> "+ titleNaseby+" </h1>" +
+						"<p> <b>Battle Description: </b>" +descNaseby+ " </p>" +
+							"<p> <b>Belligerents: </b>" +belNaseby+ " </p>"  +
+						"<p> <b>Outcome: </b>" +outcomeNaseby+ " </p>" 
                     });
 				
                     google.maps.event.addListener(markerNaseby, 'mouseover', function() {
@@ -258,7 +332,10 @@ $conn->close();
                     });
 	/*********************************************************************************************************************/	
 	   var infowindowTorrington = new google.maps.InfoWindow({
-                        content: "<h1> "+ titleTorrington+" </h1>" + "I managed to get the infowindow working"
+                        content: "<h1> "+ titleTorrington+" </h1>" +
+						"<p> <b>Battle Description: </b>" +descTorrington+ " </p>"+
+						"<p> <b>Belligerents: </b>" +belTorrington+ " </p>"  +
+						"<p> <b>Outcome: </b>" +outcomeTorrington+ " </p>" 
                     });
 				
                     google.maps.event.addListener(markerTorrington, 'mouseover', function() {
