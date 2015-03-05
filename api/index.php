@@ -42,15 +42,13 @@ if ($format == "xml") {
 
         //loop through each key,value pair in row
         foreach ($result_array as $key => $value) {
-            if($key == "name_id" ||$key == "battle_id" )
-            {
-                continue;; 
-            }
-            else
-            {
-            $xml .= "<$key>";
-            $xml .="$value";
-            $xml .="</$key>";
+            if ($key == "name_id" || $key == "battle_id") {
+                continue;
+                ;
+            } else {
+                $xml .= "<$key>";
+                $xml .="$value";
+                $xml .="</$key>";
             }
         }
         $xml .= "</$category>";
@@ -63,8 +61,10 @@ if ($format == "xml") {
     $encode = array();
 
     while ($row = mysqli_fetch_array($result)) {
+
         array_push($encode, $row);
     }
+
 
     echo json_encode($encode);
 } else {
