@@ -15,7 +15,7 @@
             echo "<h3> Date: " . $row['date'] . "</h3>";
             echo "<h3> Location: " . $row['locationName'] . "</h3>";
         }
-        $temp;
+        $temp = "";
 
         while ($row = mysqli_fetch_array($result1)) {
 

@@ -1,0 +1,19 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+#get details by specifying format
+    #get all details in db
+    RewriteRule ^people/([A-Za-z0-9-]+)/?$ http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/api.php?c=leader&f=$1 [L]
+    RewriteRule ^battles/([A-Za-z0-9-]+)/?$ http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/api.php?c=battle&f=$1 [L]
+
+    #get details by specifying names
+    RewriteRule ^people/([\ A-Za-z0-9-]+)/([A-Za-z0-9_]+)/?$ http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/api.php?c=leader&f=$2&n=$1 [L]
+    RewriteRule ^battles/([\ A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/api.php?c=battle&f=$2&n=$1 [L]   
+
+#using default format i.e xml
+RewriteRule ^people/?$ http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/api.php?c=leader&f=xml [L]
+RewriteRule ^battles/?$ http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/api.php?c=battle&f=xml [L]
+RewriteRule ^people/([\ A-Za-z0-9-]+)/?$ http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/api.php?c=leader&f=xml&n=$1 [L]
+RewriteRule ^battles/([\ A-Za-z0-9-]+)/?$ http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/api.php?c=battle&f=xml&n=$1 [L]   
+#custom error page in case of bad api call
+ErrorDocument 404 http://www.cems.uwe.ac.uk/~tam2-naphiel/dsa/api/404.php

@@ -1,0 +1,143 @@
+body
+{
+}
+.wrapper{
+    width:100%;
+    width:1336px; 
+    background-color:#A7C5C7;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+}
+.header{
+    position:absolute;
+    top:0px;
+    height:100px;
+    width:100%;
+    z-index:50;
+}
+.nav_bar{
+    font-family: Georgia;
+    color: #523928;
+    font-weight: bold;
+    position:absolute;
+    top:60px;
+    left:80px;
+    width: 100%;
+    height:25px;
+
+}
+@font-face {
+    font-family: 'drawing_with_markersregular';
+    src: url('Drawing with markers-webfont.eot');
+    src: url('Drawing with markers-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Drawing with markers-webfont.woff2') format('woff2'),
+        url('Drawing with markers-webfont.woff') format('woff'),
+        url('Drawing with markers-webfont.ttf') format('truetype'),
+        url('Drawing with markers-webfont.svg#drawing_with_markersregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+h4:first-of-type:first-letter { float: left; color: #903; font-size: 75px; line-height: 60px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: Georgia; }
+.leftPage{
+    position:absolute;
+    top:85px;
+    left:75px;
+    width:578px;
+    height:780px;
+    font-family: Georgia;
+    text-align:justify;
+    color: #523928;
+}
+.api{
+    position:absolute;
+    //top:150px;
+    // left:675px;
+    width:578px;
+    height:785px;
+    border-radius: 5px;
+    opacity:.55;
+}
+.api_container{
+    position:absolute;
+    top:85px;
+    left:665px;
+    width:578px;
+    height:780px;
+    //box-shadow: inset 39px 1px 53px -8px #575757;
+    border-radius: 5px;
+}
+.book{
+    position:absolute;
+    top:50px;
+    background-repeat:no-repeat;
+    width:1336px;
+    height:927px;
+}
+.footer{
+    position:absolute;
+    width:1336px;
+    top:1000px;
+    background-color:#3c3c3c;
+    text-align:center;
+    color:white;
+    padding-top:10px;
+}
+
+a:link {
+    color: #523928;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    color: #523928;
+}
+
+
+a:hover {
+    color: #523928;
+}
+
+
+a:active {
+    color: #523928;
+}
+
+#home
+{
+position: absolute;
+margin-top: 10px;
+margin-left: 15px;
+}
+#azham
+{
+position: absolute;
+margin-top: 5px;
+margin-left: 105px;
+}
+#hannad
+{
+position: absolute;
+margin-top: 3px;
+margin-left: 195px;
+}
+#josh
+{
+position: absolute;
+margin-top: 2px;
+margin-left: 300px;
+}
+#kayne{
+position: absolute;
+margin-top: -5px;
+margin-left: 385px;
+}
+#rss
+{
+position: absolute;
+margin-top: -5px;
+margin-left: 486px;
+}
