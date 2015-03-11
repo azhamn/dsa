@@ -1,5 +1,7 @@
 <?php
 
+require 'dbinfo.php';
+
 $format = $_GET['f'];
 
 if (!isset($_GET['c'])) {
@@ -29,17 +31,6 @@ if (!isset($_GET['n'])) {
     
 }
 
-$servername = "stocks";
-$username = "fet13023117";
-$password = "H46LMffy";
-$database = "fet13023117";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 
 

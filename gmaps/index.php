@@ -1,16 +1,5 @@
  <?php
-        $servername="stocks";
-$username="fet13023117";
-$password="H46LMffy";
-$database="fet13023117";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
+require 'dbinfo.php';
 
         $sql = "SELECT * FROM battle";
       $result = mysqli_query($conn, $sql);
